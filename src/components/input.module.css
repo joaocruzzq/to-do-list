@@ -5,10 +5,8 @@
    border: 0;
    border-radius: 8px;
    
-   line-height: 140%;
-   
    padding: 1rem;
-   margin-top: calc(0px - 1.5rem);
+   line-height: 140%;
 
    color: var(--gray-100);
    background: var(--gray-500);
