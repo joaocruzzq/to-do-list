@@ -1,0 +1,16 @@
+.input {
+   display: flex;
+   width: 100%;
+
+   border: 0;
+   border-radius: 8px;
+   
+   line-height: 140%;
+   
+   padding: 1rem;
+   margin-top: calc(0px - 1.5rem);
+
+   color: var(--gray-100);
+   background: var(--gray-500);
+   box-shadow: 0 0 0 1px var(--gray-700);
+}
