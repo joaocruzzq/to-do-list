@@ -7,3 +7,63 @@
 
    margin-top: calc(0px - 1.5rem);
 }
+
+.tasksList {
+   display: flex;
+   flex-direction: column;
+
+   max-width: 60%;
+   margin: 4rem auto 0;
+}
+
+.tasksList > header {
+   display: flex;
+   width: 100%;
+   
+   justify-content: space-between;
+}
+
+.task {
+   display: flex;
+   gap: 0.5rem;
+
+   font-size: 0.875rem;
+   font-family: 'Inter', sans-serif;
+}
+
+.task > span {
+   font-size: 0.75rem;
+   font-weight: bold;
+
+   border-radius: 9999px;
+   padding: 0.125rem 0.5rem;
+
+   color: var(--gray-200);
+   background: var(--gray-400);
+}
+
+.created {
+   color: var(--blue);
+}
+
+.done {
+   color: var(--purple);
+}
+
+.tasksList main {
+   display: flex;
+   flex-direction: column;
+
+   margin: 1.5rem 0;
+   padding: 4rem 1.5rem;
+
+   align-items: center;
+
+   border-top: 1px solid var(--gray-400);
+}
+
+.tasksList main > span {
+   margin-top: 1rem;
+   line-height: 140%;
+   text-align: center;
+}
