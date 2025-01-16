@@ -50,20 +50,29 @@
    color: var(--purple);
 }
 
-.tasksList main {
+.emptyList {
    display: flex;
    flex-direction: column;
 
    margin: 1.5rem 0;
-   padding: 4rem 1.5rem;
+   padding: 4rem 0;
 
    align-items: center;
 
    border-top: 1px solid var(--gray-400);
 }
 
-.tasksList main > span {
+.emptyList > span {
    margin-top: 1rem;
    line-height: 140%;
    text-align: center;
+}
+
+.filledList{
+   display: flex;
+   flex-direction: column;
+
+   gap: 0.75rem;
+
+   margin-top: 1.5rem
 }

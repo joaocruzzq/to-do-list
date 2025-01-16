@@ -6,6 +6,7 @@ import { Input } from './components/input'
 import { ButtonCreateTask } from './components/buttonCreateTask'
 
 import { ClipboardText } from 'phosphor-react'
+import { Task } from './components/task'
 
 export function App() {
   return (
@@ -30,14 +31,18 @@ export function App() {
           </div>
         </header>
 
-        <main>
+        <main className={styles.filledList}>
+          <Task />
+        </main>
+
+        {/* <main className={styles.emptyList}>
           <ClipboardText size={58} />
 
           <span>
             <strong>Você ainda não tem tarefas cadastradas</strong>
             <br /> Crie tarefas e organize seus itens a fazer
           </span>
-        </main>
+        </main> */}
       </div>
     </div>
   )
