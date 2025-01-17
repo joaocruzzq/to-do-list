@@ -8,7 +8,7 @@ import { ButtonCreateTask } from './components/buttonCreateTask'
 
 import { ClipboardText } from 'phosphor-react'
 
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 
 export function App() {
   const [tasks, setTasks] = useState([
@@ -44,7 +44,7 @@ export function App() {
 
     setTasks([...tasks, newTaskInfo])
 
-    setNewTask(' ')
+    setNewTask('')
   }
 
   function handleDeleteTask(taskId: number) {
@@ -56,6 +56,7 @@ export function App() {
   }
 
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
+    event.target.setCustomValidity('')
     setNewTask(event.target.value)
   }
 
@@ -67,12 +68,22 @@ export function App() {
     );
   }
 
+  function handleNewInvalidTask(event: InvalidEvent<HTMLInputElement>) {
+    event.target.setCustomValidity('O campo não pode ficar vazio.')
+  }
+
   return (
     <div>
       <Header />
 
       <form onSubmit={handleCreateNewTask} className={styles.addNewTask}>
-        <Input onChange={handleNewTaskChange} value={newTask} />
+        <Input
+          value={newTask}
+          onChange={handleNewTaskChange}
+          onInvalid={handleNewInvalidTask}
+          required
+        />
+
         <ButtonCreateTask />
       </form>
 
