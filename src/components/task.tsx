@@ -2,7 +2,7 @@ import styles from './task.module.css'
 
 import { Trash } from 'phosphor-react'
 
-interface TaskProps {
+export interface TaskProps {
    id: number
    content: string
    isChecked: boolean

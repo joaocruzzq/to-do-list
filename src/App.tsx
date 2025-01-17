@@ -8,10 +8,10 @@ import { ButtonCreateTask } from './components/buttonCreateTask'
 
 import { ClipboardText } from 'phosphor-react'
 
-import { useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 export function App() {
-  const [ tasks, setTasks ] = useState([
+  const [tasks, setTasks] = useState([
     {
       id: 1,
       isChecked: false,
@@ -31,6 +31,26 @@ export function App() {
     }
   ])
 
+  const [newTask, setNewTask] = useState('')
+
+  function handleCreateNewTask(event: FormEvent) {
+    event.preventDefault()
+
+    const newTaskInfo = {
+      id: tasks.length + 1,
+      content: newTask,
+      isChecked: false,
+    }
+
+    setTasks([...tasks, newTaskInfo])
+
+    setNewTask(' ')
+  }
+
+  function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
+    setNewTask(event.target.value)
+  }
+
   function toggleCheckbox(taskId: number) {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
@@ -43,10 +63,10 @@ export function App() {
     <div>
       <Header />
 
-      <div className={styles.addNewTask}>
-        <Input />
+      <form onSubmit={handleCreateNewTask} className={styles.addNewTask}>
+        <Input onChange={handleNewTaskChange} value={newTask} />
         <ButtonCreateTask />
-      </div>
+      </form>
 
       <div className={styles.tasksList}>
         <header>
