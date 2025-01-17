@@ -47,6 +47,14 @@ export function App() {
     setNewTask(' ')
   }
 
+  function handleDeleteTask(taskId: number) {
+    const tasksWithoutDeletedOne = tasks.filter(task => {
+      return task.id !== taskId
+    })
+
+    setTasks(tasksWithoutDeletedOne)
+  }
+
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
     setNewTask(event.target.value)
   }
@@ -98,6 +106,7 @@ export function App() {
                     key={task.id}
                     content={task.content}
                     isChecked={task.isChecked}
+                    onDeleteTask={handleDeleteTask}
                     onToggleCheckbox={toggleCheckbox}
                   />
                 )

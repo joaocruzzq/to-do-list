@@ -6,12 +6,17 @@ export interface TaskProps {
    id: number
    content: string
    isChecked: boolean
+   onDeleteTask: (taskId: number) => void;
    onToggleCheckbox:(taskId: number) => void
 }
 
-export function Task({ id, content, isChecked, onToggleCheckbox }: TaskProps) {
+export function Task({ id, content, isChecked, onToggleCheckbox, onDeleteTask }: TaskProps) {
    function handleToggleCheckbox() {
       onToggleCheckbox(id)
+   }
+
+   function handleDeleteTask() {
+      onDeleteTask(id)
    }
 
    return (
@@ -27,7 +32,7 @@ export function Task({ id, content, isChecked, onToggleCheckbox }: TaskProps) {
             </span>
          </div>
 
-         <button>
+         <button onClick={handleDeleteTask}>
             <Trash size={18} />
          </button>
       </div>
