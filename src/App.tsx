@@ -15,19 +15,7 @@ export function App() {
     {
       id: 1,
       isChecked: false,
-      content: 'Adicionar funcionalidade de comentários'
-    },
-  
-    {
-      id: 2,
-      isChecked: false,
-      content: 'Adicionar funcionalidade de deletar comentários'
-    },
-  
-    {
-      id: 3,
-      isChecked: false,
-      content: 'Resolver problemas de ativação do checkbox'
+      content: 'Criar minha primeira tarefa'
     }
   ])
 

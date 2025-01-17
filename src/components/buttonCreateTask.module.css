@@ -22,3 +22,9 @@
 .buttonCreateTask:hover {
    background: var(--blue);
 }
+
+@media (max-width: 768px) {
+   .buttonCreateTask span {
+      display: none;
+   }
+}
