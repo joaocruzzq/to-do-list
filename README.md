@@ -1,4 +1,4 @@
-# ToDo List <img src="./src/assets/rocket.svg" height="40px" align="left"> 
+# ToDo List <img src="./src/assets/todo-logo.svg" height="40px" align="left"> 
 
 Simple task management application designed to help users organize their daily activities efficiently.
 
