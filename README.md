@@ -4,7 +4,7 @@ Simple task management application designed to help users organize their daily a
 
 > 🔥 This project is built with pure web technologies, ensuring seamless cross-browser compatibility and minimal setup, without relying on external libraries or frameworks.
 
-<img src="./src/assets/banner-to-do-list.jpg" width="100%">
+<img src="./src/assets/to-do-list.jpg" width="100%">
 
 ## Running
 
